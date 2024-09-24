@@ -1,7 +1,8 @@
 ﻿using CodeGenLecture;
 
-Console .WriteLine("starting...");
+Console .WriteLine("enter what you want to dynamically...");
+var response = Console.ReadLine() ?? string.Empty;
 
-new CmdLineProcessGenerator()
-	.Generate(CodeSource.HelloWorld, Console.WriteLine)
+new RoslynGenerator()
+	.Generate(CodeSource.PrintCode(response), Console.WriteLine)
 	.ExecuteMain();
