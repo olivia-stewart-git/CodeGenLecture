@@ -1,0 +1,54 @@
+-> Burger:
+	lettuce x1
+	tomato x1
+	cheese x2
+	rance_sauce x1
+
+	description: A delicious burger with [cheese], [lettuce], [tomato], and [rance_sauce].
+
+	instruction:
+		1. Put the lettuce on the bottom bun.
+		2. Put the tomato on top of the lettuce.
+		3. Put the top bun on top of the tomato.
+
+-> rance_sauce:
+	mayonnaise x1
+	ketchup x1
+	lemon_juice x1
+
+	description: A tangy sauce that goes well with burgers. [lemon_juice] adds a fresh flavor to the [mayonnaise] and [ketchup].
+
+	instruction:
+		1. Mix the mayonnaise and ketchup together.
+		2. Add the lemon juice to the mixture.
+
+
+-> mayonnaise:
+	props: dairy
+	weight: 0.2
+	description: A creamy dairy product that adds richness to dishes.
+
+-> ketchup:
+	props: fruit, sauce
+	weight: 0.2
+	description: A sweet sauce that adds flavor to dishes.
+
+-> lemon_juice:
+	props: fruit, sauce
+	weight: 0.1
+	description: A tangy juice that adds flavor to dishes.
+
+-> tomato:
+	props: vegetable, fruit
+	weight: 0.2
+	description: A juicy fruit that adds flavor to dishes.
+
+-> lettuce:
+	props: vegetable
+	weight: 0.1
+	description: A leafy green that adds crunch to dishes.
+
+-> cheese:
+	props: dairy
+	weight: 0.3
+	description: A creamy dairy product that adds richness to dishes.
