@@ -14,41 +14,5 @@
 	:[ketchup] = 1
 	:[lemon_juice] = 1
 
-	|[description] = "Adade mayonnaise and ketchup."
-}
-
-[mayonnaise]
-{
-	|weight = 0.2
-	|[description] = "Creamy dairy product that adds richness to dishes."
-}
-
-[ketchup]
-{
-	|[weight] = 0.2
-	|[description] = "A sweet sauce that adds flavor to dishes."
-}
-
-[lemon_juice]
-{
-	|[weight] = 0.1
-	|[description] = "A tangy juice that adds flavor to dishes."
-}
-
-[tomato]
-{
-	|[weight] = 0.2
-	|[description] = "A juicy fruit that adds flavor to dishes."
-}
-
-[lettuce]
-{
-	|[weight] = 0.1
-	|[description] = "A leafy green that adds crunch to dishes."
-}
-
-[cheese]
-{
-	|[weight] = 0.3
-	|[description] = "A creamy dairy product that adds richness to dishes."
+	|[description] = "A sauce made from mayonnaise and ketchup."
 }

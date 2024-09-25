@@ -69,8 +69,6 @@ public class Lexer : IDisposable
 					{
 						tokens.Add(stringTkn);
 					}
-					Read();
-
                     break;
 				case '=':
 					tokens.Add(new Syntax.AssignmentToken(lineNumber, columnNumber));
@@ -89,7 +87,7 @@ public class Lexer : IDisposable
 					else
 					{
 						var remainingText = _reader.ReadToEnd() ?? string.Empty;
-						throw new InvalidSyntaxException(@$"Unknown grammar found at position {_text.Length - remainingText.Length}" + GetLinePositionMessage(), lineNumber, columnNumber);
+						throw new InvalidSyntaxException(@$"Unknown grammar '{c}' found at position {_text.Length - remainingText.Length}" + GetLinePositionMessage(), lineNumber, columnNumber);
 					}
 					break;
 			}
@@ -126,14 +124,14 @@ public class Lexer : IDisposable
 	Token? ParseString()
 	{
 		stringOpen = !stringOpen;
-		if (!stringOpen)
+        if (!stringOpen)
 			return null;
 
 		var sb = new StringBuilder();
 		char next;
 		while (char.IsLetterOrDigit(next = (char)_reader.Peek())
 			|| allowedStringChars.Contains(next)
-			|| next == ' '
+			|| char.IsWhiteSpace(next)
 			)
 		{
 			sb.Append((char)Read());
@@ -142,6 +140,7 @@ public class Lexer : IDisposable
 		{
 			throw new InvalidSyntaxException($"Expected '\"' but found '{(char)next}'" + GetLinePositionMessage(), lineNumber, columnNumber);
 		}
+
 		return new Syntax.StringToken(sb.ToString(), lineNumber, columnNumber);
 	}
 
