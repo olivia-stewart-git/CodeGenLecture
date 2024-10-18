@@ -36,6 +36,7 @@ public abstract class Token
         return $"{TokenKind} [{Line}, {Column}]";
     }
 }
+#region token-classes
 
 public abstract class SymbolToken : Token
 {
@@ -65,6 +66,8 @@ public abstract class NumericToken<T> : ValueToken
 
     public abstract T NumericValue { get; }
 }
+
+#endregion
 
 public class Syntax
 {
